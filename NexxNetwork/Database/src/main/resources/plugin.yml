@@ -1,0 +1,6 @@
+name: NexxDatabase
+main: com.nexxmc.DatabasePlugin
+version: 1.0-DEV
+api-version: '1.13'
+author: Teddeh
+description: 'Handles Database connections for other NexxMC plugins'
