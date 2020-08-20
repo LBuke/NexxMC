@@ -1,4 +1,4 @@
-package com.nexxmc.server;
+package com.nexxmc.utility;
 
 import com.google.common.collect.Maps;
 

@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-DEV</version>
     <modules>
-        <module>Database</module>
-        <module>Server</module>
+        <module>utility</module>
+        <module>database</module>
+        <module>server</module>
     </modules>
     <name>NexxNetwork</name>
 

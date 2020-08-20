@@ -15,6 +15,7 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- Spigot / Paper -->
         <dependency>
             <groupId>org.spigot</groupId>
             <artifactId>spigotmc</artifactId>
@@ -22,5 +23,49 @@
             <scope>system</scope>
             <systemPath>${basedir}/../../Libs/paper.jar</systemPath>
         </dependency>
+
+        <dependency>
+            <groupId>com.nexxmc</groupId>
+            <artifactId>utility</artifactId>
+            <version>1.0-DEV</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Protocol Lib -->
+        <dependency>
+            <groupId>protocollib</groupId>
+            <artifactId>protocollib</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/../../Libs/ProtocolLib.jar</systemPath>
+        </dependency>
     </dependencies>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${project.basedir}/../Libraries/Build/${project.build.finalName}.jar</outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
